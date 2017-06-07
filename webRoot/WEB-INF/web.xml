@@ -9,4 +9,34 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  	
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.my.servlet.Login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+  
+  
+  <!-- 异常处理 begin -->
+ 	 <servlet>
+        <servlet-name>ErrorHandler</servlet-name>
+        <servlet-class>com.my.exception.ErrorHandler</servlet-class>
+	</servlet>
+	<!-- servlet mappings -->
+	<servlet-mapping>
+	        <servlet-name>ErrorHandler</servlet-name>
+	        <url-pattern>/TomcatTest/ErrorHandler</url-pattern>
+	</servlet-mapping>
+	<error-page>
+	    <error-code>404</error-code>
+	    <location>/TomcatTest/ErrorHandler</location>
+	</error-page>
+	<error-page>
+	    <exception-type>java.lang.Throwable</exception-type >
+	    <location>/ErrorHandler</location>
+	</error-page>
+    <!-- 异常处理 end -->
 </web-app>
