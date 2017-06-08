@@ -26,7 +26,7 @@ public class Login extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		PrintWriter out = resp.getWriter(); 
+		/*PrintWriter out = resp.getWriter(); */
 		req. setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html;charset=utf-8");
 		resp. setCharacterEncoding("UTF-8");
@@ -42,7 +42,9 @@ public class Login extends HttpServlet{
 			System.out.println("请输入职业");	
 		if(job.equals("管理员")) {
 			admin = adminService.login(admin, resp);
-			out.print(admin);
+			req.setAttribute("admin", admin);
+			req.setAttribute("abc", "abcd");
+			req.getRequestDispatcher("/admin/welcome.jsp").forward(req, resp);
 		}
 	}
 }
