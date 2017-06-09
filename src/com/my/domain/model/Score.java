@@ -30,6 +30,11 @@ public class Score {
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Score [id=" + id + ", studentId=" + studentId + ", grade="
+				+ grade + "]";
+	}
 	
 }

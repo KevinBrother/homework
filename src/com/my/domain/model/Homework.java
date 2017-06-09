@@ -82,5 +82,13 @@ public class Homework {
 	public void setUpat(Date upat) {
 		this.upat = upat;
 	}
+
+	@Override
+	public String toString() {
+		return "Homework [id=" + id + ", teacherId=" + teacherId + ", classId="
+				+ classId + ", courseId=" + courseId + ", title=" + title
+				+ ", descr=" + descr + ", newat=" + newat + ", upat=" + upat
+				+ "]";
+	}
 	
 }

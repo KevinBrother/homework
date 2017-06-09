@@ -87,7 +87,6 @@ public class ConTest {
 
 		Connection conn = null;
 		Statement stmt = null;
-		ResultSet rs = null;
 		try {
 			
 		    conn = DBHelper.getConnection();
@@ -108,15 +107,6 @@ public class ConTest {
 		}                                             
 		
 		finally {
-			//释放数据集对象
-			if(rs != null){
-				try {
-					rs.close();
-					rs = null;
-				} catch (SQLException e) {
-					e.printStackTrace();
-				} 
-			}
 			//释放语句对象
 			if(stmt != null){
 				try {

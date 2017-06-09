@@ -1,0 +1,52 @@
+ul, li {
+	list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* header */
+.header {
+	height:50px;
+}
+
+.logo {
+	
+}
+
+.login {
+	float: right;	
+}
+
+.login .loginName {
+	float: right;
+	margin-right: 10px;
+}
+
+.login .logout {
+	float: right;
+}
+
+/* aside */
+.leftAside {
+	float: left;
+	width: 200px;
+}	
+
+/* content */
+.content {
+	width: auto;
+}
+
+.content-header {
+	height: 30px;
+}
+
+.content-header ul.breadcrumb {
+	
+}
+
+.content-header ul.breadcrumb li{
+	float: left;
+    margin-left: 5px;
+}
+

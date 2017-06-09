@@ -1,13 +1,11 @@
 package com.my.domain.model;
 
-public class Admin {
+public class Teacher {
 	private int id;
 	
 	private String name;
 	
 	private String password;
-	
-	private String role;
 
 	public int getId() {
 		return id;
@@ -33,17 +31,10 @@ public class Admin {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
 	@Override
 	public String toString() {
-		return "Admin [id=" + id + ", name=" + name + ", password=" + password
-				+ ", role=" + role + "]";
+		return "Teacher [id=" + id + ", name=" + name + ", password="
+				+ password + "]";
 	}
+	
 }

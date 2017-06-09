@@ -22,11 +22,16 @@
 	<section class="content">
 		<header class="content-header">
 			<ul class="breadcrumb">
-				<li>首页</li>
+				<li>教师管理</li>
+				<li>></li>
+				<li>教师详情</li>
 			</ul>
 		</header>
 		<div class="body">
-			<h1>HELLO!!!</h1>
+			<form action="${pageContext.request.contextPath}/teachDeatil" method="post">
+				姓名： <input type="text" name="name" placeholder="教师姓名"/> <br/>
+				<input type="submit" value="确定"/>
+			</form>
 		</div>
 	</section>	
 	<!-- 底部 -->

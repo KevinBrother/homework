@@ -22,11 +22,17 @@
 	<section class="content">
 		<header class="content-header">
 			<ul class="breadcrumb">
-				<li>首页</li>
+				<li>教师管理</li>
+				<li>></li>
+				<li>教师列表</li>
 			</ul>
 		</header>
 		<div class="body">
-			<h1>HELLO!!!</h1>
+			<form action="${pageContext.request.contextPath}/addTeach" method="post">
+				姓名： <input type="text" name="name" placeholder="教师姓名"/> <br/>
+				<!-- 教授课程： <input type="text" name="" placeholder="课程名称：英语  语文"/><br/> -->
+				<input type="submit" value="确定"/>
+			</form>
 		</div>
 	</section>	
 	<!-- 底部 -->

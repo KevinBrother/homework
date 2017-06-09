@@ -22,11 +22,17 @@
 	<section class="content">
 		<header class="content-header">
 			<ul class="breadcrumb">
-				<li>首页</li>
+				<li>教师管理</li>
+				<li>></li>
+				<li>修改教师信息</li>
 			</ul>
 		</header>
 		<div class="body">
-			<h1>HELLO!!!</h1>
+			<form action="${pageContext.request.contextPath}/modifyTeach" method="post">
+				姓名： <input type="text" name="name" placeholder="教师姓名"/> <br/>
+				密码： <input type="text" name="name" placeholder="教师密码"/> <br/>
+				<input type="submit" value="确定"/>
+			</form>
 		</div>
 	</section>	
 	<!-- 底部 -->

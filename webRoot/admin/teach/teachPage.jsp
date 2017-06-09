@@ -22,11 +22,32 @@
 	<section class="content">
 		<header class="content-header">
 			<ul class="breadcrumb">
-				<li>首页</li>
+				<li>教师管理</li>
+				<li>></li>
+				<li>教师列表</li>
 			</ul>
 		</header>
 		<div class="body">
-			<h1>HELLO!!!</h1>
+			<div class="operator">
+				<input type="text" placeholder="请输入教师编号"/>
+				<button>搜索</button>
+			</div>
+			<table class="body-table">
+				<tr>
+					<th>教师编号</th>
+					<th>教师姓名</th>
+					<th>是否是班主任</th>
+					<th>所带班级编号</th>
+					<th>教授课程</th>
+				</tr>	
+				<tr>
+					<td>教师编号</td>
+					<td>教师姓名</td>
+					<td>是否是班主任</td>
+					<td>所带班级编号</td>
+					<td>教授课程</td>
+				</tr>	
+			</table>
 		</div>
 	</section>	
 	<!-- 底部 -->
