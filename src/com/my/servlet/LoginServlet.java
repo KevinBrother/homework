@@ -31,6 +31,7 @@ public class LoginServlet extends HttpServlet{
 		resp.setContentType("text/html;charset=utf-8");
 		resp. setCharacterEncoding("UTF-8");
 		resp.setHeader("content-type", "text/html;charset=UTF-8"); 
+		PrintWriter out = resp.getWriter(); 
 		
 		admin.setName(req.getParameter("name"));
 		String job = req.getParameter("job");
@@ -41,10 +42,15 @@ public class LoginServlet extends HttpServlet{
 		if(job.length() < 0 ) 
 			System.out.println("请输入职业");	
 		if(job.equals("管理员")) {
-			admin = adminService.login(admin, resp);
-			req.setAttribute("admin", admin);
-			req.setAttribute("abc", "abcd");
-			req.getRequestDispatcher("/admin/welcome.jsp").forward(req, resp);
+			try {
+				admin = adminService.login(admin, resp);
+				req.setAttribute("admin", admin);
+				req.setAttribute("abc", "abcd");
+				req.getRequestDispatcher("/admin/welcome.jsp").forward(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+				out.print(e.getMessage());
+			}
 		}
 	}
 }

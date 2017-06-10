@@ -9,11 +9,9 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/admin/welcome.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/core.js"></script>
+
 </head>
-<body>
-<%-- 	${param.name}
-	${admin.name}
-	${abc} --%>
+<body onload="window.location.href='${pageContext.request.contextPath}/teachPage';">
 	<!-- 头部 -->
 	<div id="header"></div>		
 	<!-- 左侧菜单栏 -->
@@ -40,12 +38,21 @@
 					<th>所带班级编号</th>
 					<th>教授课程</th>
 				</tr>	
+	<%-- 			   <%
+					   //循环显示数据
+					   List<Teacher> teacherslist = (List)request.getAttribute("teachersList"); // 取request里面的对象队列
+					    if(teacherslist.size() != 0){
+					      for(int i = 0; i < teacherslist.size(); i++){        
+					         pageContext.setAttribute("teacher", teacherslist.get(i)); 
+					           //保存到页面pageContext里面方便下面进行EL表达式调用
+				     %> --%>
 				<tr>
-					<td>教师编号</td>
-					<td>教师姓名</td>
-					<td>是否是班主任</td>
-					<td>所带班级编号</td>
-					<td>教授课程</td>
+					${teachersList}
+					<td>${teacher.id}</td>
+					<td>${teacher.name}</td>
+					<td>${teacher.isTutor}</td>
+					<td>${teacher.leadClassId}</td>
+					<td>${teacher.teachCourse}</td>
 				</tr>	
 			</table>
 		</div>

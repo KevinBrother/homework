@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.my.domain.model.Teacher;
-import com.my.domain.service.TeachersService;
+import com.my.domain.service.TeacherService;
 
 public class modifyTeachServlet extends HttpServlet{
 	
-	TeachersService teachersService = new TeachersService();
+	TeacherService teacherService = new TeacherService();
 	
 	Teacher teacher = new Teacher();
 	
@@ -33,7 +33,7 @@ public class modifyTeachServlet extends HttpServlet{
 		
 		teacher.setName(req.getParameter("name"));
 		teacher.setPassword(req.getParameter("password"));
-		teachersService.modifyTeach(teacher);
+		teacherService.modifyTeach(teacher);
 		
 		req.getRequestDispatcher("/success.jsp").forward(req, resp);
 	}

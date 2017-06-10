@@ -6,7 +6,13 @@ public class Teacher {
 	private String name;
 	
 	private String password;
+	
+	private String teachCourse;
+	
+	private boolean isTutor;
 
+	private int leadClassId;
+	
 	public int getId() {
 		return id;
 	}
@@ -31,10 +37,35 @@ public class Teacher {
 		this.password = password;
 	}
 
+	public String getTeachCourse() {
+		return teachCourse;
+	}
+
+	public void setTeachCourse(String teachCourse) {
+		this.teachCourse = teachCourse;
+	}
+
+	public boolean isTutor() {
+		return isTutor;
+	}
+
+	public void setTutor(boolean isTutor) {
+		this.isTutor = isTutor;
+	}
+
+	public int getLeadClassId() {
+		return leadClassId;
+	}
+
+	public void setLeadClassId(int leadClassId) {
+		this.leadClassId = leadClassId;
+	}
+
 	@Override
 	public String toString() {
 		return "Teacher [id=" + id + ", name=" + name + ", password="
-				+ password + "]";
+				+ password + ", teachCourse=" + teachCourse + ", isTutor="
+				+ isTutor + ", leadClassId=" + leadClassId + "]";
 	}
-	
+
 }

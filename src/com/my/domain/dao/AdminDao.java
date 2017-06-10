@@ -16,9 +16,10 @@ public class AdminDao {
 	protected static final Logger logger = LoggerFactory.getLogger(AdminDao.class);
 	
 	public Admin login(Admin admin) {
-		Connection conn = null;
 		PreparedStatement stmt = null;
+		Connection conn = null;
 		ResultSet rs = null;
+		Admin returnAdmin = new Admin();
 		try {
 			//获取链接
 		    conn = DBHelper.getConnection();
@@ -31,12 +32,12 @@ public class AdminDao {
 			rs = stmt.executeQuery();
 			//处理结果
 			while(rs.next()) {
-				admin.setId(rs.getInt("id"));
-				admin.setName(rs.getString("name"));
-				admin.setPassword(rs.getString("password"));
-				admin.setRole(rs.getString("role"));
+				returnAdmin.setId(rs.getInt("id"));
+				returnAdmin.setName(rs.getString("name"));
+				returnAdmin.setPassword(rs.getString("password"));
+				returnAdmin.setRole(rs.getString("role"));
 			}
-			logger.info("===<<<<<AdminDao=====" + admin);
+			logger.info("===<<<<<=====" + returnAdmin);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -61,6 +62,6 @@ public class AdminDao {
 				} 
 			}
 		}
-		return admin;
+		return returnAdmin;
 	}
 }

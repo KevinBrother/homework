@@ -27,6 +27,15 @@
 		<servlet-name>AddTeachServlet</servlet-name>
 		<url-pattern>/addTeach</url-pattern>
 	</servlet-mapping>
+  	
+	<servlet>
+		<servlet-name>TeachPageServlet</servlet-name>
+		<servlet-class>com.my.servlet.TeachPageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TeachPageServlet</servlet-name>
+		<url-pattern>/teachPage</url-pattern>
+	</servlet-mapping>
   
   
   <!-- 异常处理 begin -->

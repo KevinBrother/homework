@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.my.domain.model.Teacher;
-import com.my.domain.service.TeachersService;
+import com.my.domain.service.TeacherService;
 
 public class AddTeachServlet extends HttpServlet{
 	
-	TeachersService teachersService = new TeachersService();
+	TeacherService teacherService = new TeacherService();
 	
 	Teacher teacher = new Teacher();
 	
@@ -32,7 +32,7 @@ public class AddTeachServlet extends HttpServlet{
 		resp.setHeader("content-type", "text/html;charset=UTF-8"); 
 		
 		teacher.setName(req.getParameter("name"));
-		teachersService.addTeach(teacher);
+		teacherService.addTeach(teacher);
 		
 		req.getRequestDispatcher("/success.jsp").forward(req, resp);
 	}
