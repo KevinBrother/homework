@@ -9,9 +9,19 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/admin/welcome.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/core.js"></script>
-
+<script type="text/javascript">
+	function teachPage() {
+		$.ajax({
+			url: "${pageContext.request.contextPath}/teachPage",
+			type: "post",
+			success: function(data) {
+				console.log(data)
+			},
+		})
+	}
+</script>
 </head>
-<body onload="window.location.href='${pageContext.request.contextPath}/teachPage';">
+<body onload="teachPage();">
 	<!-- 头部 -->
 	<div id="header"></div>		
 	<!-- 左侧菜单栏 -->

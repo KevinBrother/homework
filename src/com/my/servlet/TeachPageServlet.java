@@ -1,6 +1,7 @@
 package com.my.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,14 +26,13 @@ public class TeachPageServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-
 		req. setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html;charset=utf-8");
 		resp. setCharacterEncoding("UTF-8");
 		resp.setHeader("content-type", "text/html;charset=UTF-8"); 
+		PrintWriter out = resp.getWriter();
 		
-		req.setAttribute("teachersList", teacherService.teachPage());
+		out.print(teacherService.teachPage());
 		
-		/*req.getRequestDispatcher("/admin/teach/teachPage.jsp").forward(req, resp);*/
 	}
 }
