@@ -32,7 +32,17 @@ public class TeachPageServlet extends HttpServlet{
 		resp.setHeader("content-type", "text/html;charset=UTF-8"); 
 		PrintWriter out = resp.getWriter();
 		
+/*	    JSONObject jsonObject = new JSONObject();  
+        jsonObject.put("categorys", teacherService.teachPage()); 
+        
+        JSONArray jsonArray = new JSONArray();  
+        jsonArray.add(jsonObject);  */
+		teacherService.teachPage();
 		out.print(teacherService.teachPage());
+		
+		req.setAttribute("teachersList", teacherService.teachPage());		
+		
+		req.getRequestDispatcher("/admin/teach/teachPage.jsp").forward(req, resp);
 		
 	}
 }

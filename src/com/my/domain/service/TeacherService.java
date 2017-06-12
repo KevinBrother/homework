@@ -1,6 +1,6 @@
 package com.my.domain.service;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.my.domain.dao.TeacherDao;
 import com.my.domain.model.Teacher;
@@ -13,7 +13,7 @@ public class TeacherService {
 		teacherDao.addTeach(teacher);
 	}
 	
-	public ArrayList<Teacher> teachPage() {
+	public List teachPage() {
 		return teacherDao.teachPage();
 	}
 	

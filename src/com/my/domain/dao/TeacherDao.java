@@ -6,12 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.my.domain.model.Teacher;
 import com.my.util.DBHelper;
+import com.my.util.ModelConvert;
 
 public class TeacherDao {
 	
@@ -50,7 +53,27 @@ public class TeacherDao {
 			}
 		}
 	}
-
+	
+/*	public List teachPage() {
+		try {
+			//获取链接
+		    conn = DBHelper.getConnection();
+			String sql = "select * from teacher";
+			//得到运行环境，并且执行sql
+			prepStmt = conn.prepareStatement(sql);
+	        //获得结果
+			rs  = prepStmt.executeQuery();
+			//处理结果
+			
+			List<Map<String, Object>>  list =  ModelConvert.convertList(rs);
+			logger.info("===<<<<<=====" + list);
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}*/
+	
 	public ArrayList<Teacher> teachPage() {
 		ArrayList<Teacher> list = new ArrayList<Teacher>(); 
 		Teacher returnTeach = new Teacher();
