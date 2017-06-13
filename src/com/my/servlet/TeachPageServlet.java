@@ -2,6 +2,7 @@ package com.my.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,10 +38,9 @@ public class TeachPageServlet extends HttpServlet{
         
         JSONArray jsonArray = new JSONArray();  
         jsonArray.add(jsonObject);  */
-		teacherService.teachPage();
-		out.print(teacherService.teachPage());
+		List<Teacher> teachersList = teacherService.teachPage();
 		
-		req.setAttribute("teachersList", teacherService.teachPage());		
+		req.setAttribute("teachersList", teachersList);		
 		
 		req.getRequestDispatcher("/admin/teach/teachPage.jsp").forward(req, resp);
 		

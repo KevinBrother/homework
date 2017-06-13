@@ -76,11 +76,9 @@ public class TeacherDao {
 	
 	public ArrayList<Teacher> teachPage() {
 		ArrayList<Teacher> list = new ArrayList<Teacher>(); 
-		Teacher returnTeach = new Teacher();
 		try {
 			//获取链接
 		    conn = DBHelper.getConnection();
-		    logger.info("===>>>>>====" + returnTeach);
 			String sql = "select * from teacher";
 			//得到运行环境，并且执行sql
 			prepStmt = conn.prepareStatement(sql);
@@ -88,11 +86,12 @@ public class TeacherDao {
 			rs  = prepStmt.executeQuery();
 			//处理结果
 			while(rs.next()) {
+				Teacher returnTeach = new Teacher();
 				returnTeach.setId(rs.getInt("id"));
 				returnTeach.setName(rs.getString("name"));
 				returnTeach.setPassword(rs.getString("password"));
 				returnTeach.setTeachCourse(rs.getString("teachCourse"));
-				returnTeach.setTutor(rs.getBoolean("isTutor"));
+				returnTeach.setIsTutor(rs.getBoolean("isTutor"));
 				returnTeach.setLeadClassId(rs.getInt("leadClassId"));
 				list.add(returnTeach);
 			}
@@ -126,16 +125,16 @@ public class TeacherDao {
 		return list;
 	}
 	
-	public Teacher teachDetail(Teacher teacher) {
+	public Teacher teachDetail(String teacherId) {
 		Teacher returnTeach = new Teacher();
 		try {
 			//获取链接
 		    conn = DBHelper.getConnection();
-		    logger.info("===>>>>>====" + teacher);
+		    logger.info("===>>>>>====" + teacherId);
 			String sql = "select * from teacher where"
-		    + "id=" + teacher.getId();
+		    + " id=" + teacherId;
 			//得到运行环境，并且执行sql
-			stmt = conn.prepareStatement(sql);
+			prepStmt = conn.prepareStatement(sql);
 	        //获得结果
 			rs  = prepStmt.executeQuery();
 			//处理结果
@@ -180,13 +179,16 @@ public class TeacherDao {
 		    conn = DBHelper.getConnection();
 		    logger.info("===>>>>>====" + teacher);
 			String sql = "update table teacher "
-		    + "set name='" + teacher.getName() + ", password='" + teacher.getPassword() + "'";
+		    + "set name='" + teacher.getName() + "', password='" + teacher.getPassword() + "' where id=" + teacher.getId();
 			//得到运行环境，并且执行sql
 			stmt = conn.createStatement();
 	        //获得结果
 			int re  = stmt.executeUpdate(sql);
-			//处理结果
-			logger.info("===<<<<<=====" + re);
+			if(re > 0) 
+				logger.info("===<<<<<=====" + 1);
+			else 
+				logger.info("===<<<<<=====" + 0);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -203,6 +205,5 @@ public class TeacherDao {
 			}
 		}
 	}
-
 
 }

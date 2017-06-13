@@ -17,8 +17,8 @@ public class TeacherService {
 		return teacherDao.teachPage();
 	}
 	
-	public void teachDetail(Teacher teacher) {
-		teacherDao.teachDetail(teacher);
+	public Teacher teachDetail(String teacherId) {
+		return teacherDao.teachDetail(teacherId);
 	}
 
 	public void modifyTeach(Teacher teacher) {

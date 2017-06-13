@@ -36,6 +36,24 @@
 		<servlet-name>TeachPageServlet</servlet-name>
 		<url-pattern>/teachPage</url-pattern>
 	</servlet-mapping>
+  	
+	<servlet>
+		<servlet-name>TeachDetailServlet</servlet-name>
+		<servlet-class>com.my.servlet.TeachDetailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TeachDetailServlet</servlet-name>
+		<url-pattern>/teachDetail</url-pattern>
+	</servlet-mapping>
+  	
+	<servlet>
+		<servlet-name>ModifyTeachServlet</servlet-name>
+		<servlet-class>com.my.servlet.ModifyTeachServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModifyTeachServlet</servlet-name>
+		<url-pattern>/modifyTeach</url-pattern>
+	</servlet-mapping>
   
   
   <!-- 异常处理 begin -->

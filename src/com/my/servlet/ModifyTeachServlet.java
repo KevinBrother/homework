@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.my.domain.model.Teacher;
 import com.my.domain.service.TeacherService;
 
-public class teachDetailServlet extends HttpServlet{
+public class ModifyTeachServlet extends HttpServlet{
 	
 	TeacherService teacherService = new TeacherService();
 	
@@ -30,9 +30,11 @@ public class teachDetailServlet extends HttpServlet{
 		resp.setContentType("text/html;charset=utf-8");
 		resp. setCharacterEncoding("UTF-8");
 		resp.setHeader("content-type", "text/html;charset=UTF-8"); 
-		
+
 		teacher.setId(Integer.valueOf(req.getParameter("id")));
-		teacherService.teachDetail(teacher);
+		teacher.setName(req.getParameter("name"));
+		teacher.setPassword(req.getParameter("password"));
+		teacherService.modifyTeach(teacher);
 		
 		req.getRequestDispatcher("/success.jsp").forward(req, resp);
 	}

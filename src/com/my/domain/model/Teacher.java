@@ -45,11 +45,11 @@ public class Teacher {
 		this.teachCourse = teachCourse;
 	}
 
-	public boolean isTutor() {
+	public boolean getIsTutor() {
 		return isTutor;
 	}
 
-	public void setTutor(boolean isTutor) {
+	public void setIsTutor(boolean isTutor) {
 		this.isTutor = isTutor;
 	}
 

@@ -28,8 +28,10 @@
 			</ul>
 		</header>
 		<div class="body">
-			<form action="${pageContext.request.contextPath}/teachDeatil" method="post">
-				姓名： <input type="text" name="name" placeholder="教师姓名"/> <br/>
+			<form action="${pageContext.request.contextPath}/modifyTeach" method="post">
+				姓名： <input type="text" name="name" value=${teacher.name} placeholder="教师姓名"/> <br/>
+				新密码： <input type="password" name="password" value="" placeholder="教师密码"/> <br/>
+				 <input type="hidden" name="id" value=${teacher.id} />
 				<input type="submit" value="确定"/>
 			</form>
 		</div>

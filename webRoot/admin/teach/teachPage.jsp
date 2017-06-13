@@ -10,19 +10,8 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/admin/welcome.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/core.js"></script>
-<script type="text/javascript">
-	function teachPage() {
-		$.ajax({
-			url: "${pageContext.request.contextPath}/teachPage",
-			type: "post",
-			success: function(data) {
-				console.log(data)
-			},
-		})
-	}
-</script>
 </head>
-<body onload="teachPage();">
+<body>
 	<!-- 头部 -->
 	<div id="header"></div>		
 	<!-- 左侧菜单栏 -->
@@ -58,8 +47,7 @@
 					           //保存到页面pageContext里面方便下面进行EL表达式调用
 				     %> 
 				<tr>
-					${teachersList}
-					<td>${teacher.id}</td>
+					<td><a href="${pageContext.request.contextPath}/teachDetail?id=${teacher.id}">${teacher.id}</a></td>
 					<td>${teacher.name}</td>
 					<td>${teacher.isTutor}</td>
 					<td>${teacher.leadClassId}</td>
