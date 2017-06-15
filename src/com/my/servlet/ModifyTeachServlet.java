@@ -12,6 +12,8 @@ import com.my.domain.service.TeacherService;
 
 public class ModifyTeachServlet extends HttpServlet{
 	
+	private static final long serialVersionUID = 1L;
+
 	TeacherService teacherService = new TeacherService();
 	
 	Teacher teacher = new Teacher();
@@ -26,10 +28,10 @@ public class ModifyTeachServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		/*PrintWriter out = resp.getWriter(); */
-		req. setCharacterEncoding("UTF-8");
+	/*	req. setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html;charset=utf-8");
 		resp. setCharacterEncoding("UTF-8");
-		resp.setHeader("content-type", "text/html;charset=UTF-8"); 
+		resp.setHeader("content-type", "text/html;charset=UTF-8"); */
 
 		teacher.setId(Integer.valueOf(req.getParameter("id")));
 		teacher.setName(req.getParameter("name"));

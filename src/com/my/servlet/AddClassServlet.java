@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.my.domain.model.Teacher;
 import com.my.domain.service.TeacherService;
 
-public class TeachPageServlet extends HttpServlet{
+public class AddClassServlet extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
 
@@ -27,14 +27,8 @@ public class TeachPageServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		req. setCharacterEncoding("UTF-8");
-		resp.setContentType("text/html;charset=GBK");
-	  /*resp. setCharacterEncoding("UTF-8"); */
-		resp.setHeader("content-type", "text/html;charset=GBK");
+
 		
-		req.setAttribute("teachersList", teacherService.teachPage());		
-		
-		req.getRequestDispatcher("/admin/teach/teachPage.jsp").forward(req, resp);
-		
+		req.getRequestDispatcher("/success.jsp").forward(req, resp);
 	}
 }

@@ -6,15 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.my.domain.model.Teacher;
 import com.my.util.DBHelper;
-import com.my.util.ModelConvert;
 
 public class TeacherDao {
 	
@@ -178,7 +175,7 @@ public class TeacherDao {
 			//获取链接
 		    conn = DBHelper.getConnection();
 		    logger.info("===>>>>>====" + teacher);
-			String sql = "update table teacher "
+			String sql = "Update teacher "
 		    + "set name='" + teacher.getName() + "', password='" + teacher.getPassword() + "' where id=" + teacher.getId();
 			//得到运行环境，并且执行sql
 			stmt = conn.createStatement();

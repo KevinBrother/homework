@@ -137,7 +137,9 @@ public class ConTest {
 			
 		    String sql = "update admin set name='"
 		    + admin.getName() + "',password='" + admin.getPassword() + "',role='" + admin.getRole() 
-		    + "'where id = " + admin.getId(); 
+		    + "' where id = " + admin.getId(); 
+		    
+		    System.out.println(sql);
 		    //得到运行环境
 			stmt = conn.createStatement();
 			//执行sql

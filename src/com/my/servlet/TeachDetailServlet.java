@@ -12,6 +12,8 @@ import com.my.domain.service.TeacherService;
 
 public class TeachDetailServlet extends HttpServlet{
 	
+	private static final long serialVersionUID = 1L;
+
 	TeacherService teacherService = new TeacherService();
 	
 	Teacher teacher = new Teacher();
