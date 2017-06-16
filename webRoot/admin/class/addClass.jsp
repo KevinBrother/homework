@@ -22,9 +22,9 @@
 	<section class="content">
 		<header class="content-header">
 			<ul class="breadcrumb">
-				<li>教师管理</li>
+				<li>班级管理</li>
 				<li>></li>
-				<li>教师列表</li>
+				<li>新增列表</li>
 			</ul>
 		</header>
 		<div class="body">

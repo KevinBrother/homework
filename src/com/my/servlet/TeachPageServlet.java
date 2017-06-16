@@ -34,7 +34,8 @@ public class TeachPageServlet extends HttpServlet{
 		
 		req.setAttribute("teachersList", teacherService.teachPage());		
 		
-		req.getRequestDispatcher("/admin/teach/teachPage.jsp").forward(req, resp);
-		
+		req.getRequestDispatcher("/test/teachPage.jsp").forward(req, resp);
+/*		req.getRequestDispatcher("/admin/teach/teachPage.jsp").forward(req, resp);
+*/		
 	}
 }

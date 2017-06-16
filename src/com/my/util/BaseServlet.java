@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /*在项目中，用一个Servlet继承该BaseServlet就可以实现多个请求处理。*/
 
-public class BaseServlet extends HttpServlet{
+public class BaseServlet extends HttpServlet {
  
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp)

@@ -100,4 +100,12 @@
 	</error-page>
     
     <!-- 还是异常处理  end-->
+
+    <!-- JSTL -->
+    <jsp-config>
+	    <taglib>
+		<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+		<taglib-location>/WEB-INF/c.tld</taglib-location>
+		</taglib>
+    </jsp-config>
 </web-app>
