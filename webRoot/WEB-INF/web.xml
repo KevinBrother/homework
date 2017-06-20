@@ -32,6 +32,7 @@
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
   	
+  	<!--管理员登录教师模块 begin-->
 	<servlet>
 		<servlet-name>AddTeachServlet</servlet-name>
 		<servlet-class>com.my.servlet.AddTeachServlet</servlet-class>
@@ -67,6 +68,21 @@
 		<servlet-name>ModifyTeachServlet</servlet-name>
 		<url-pattern>/modifyTeach</url-pattern>
 	</servlet-mapping>
+  <!--管理员登录教师模块 end-->
+  
+  
+  <!--管理员登录班级模块 begin-->
+  <servlet>
+  	<servlet-name>AdminClasses</servlet-name>
+  	<servlet-class>com.my.servlet.AdminClasses</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AdminClasses</servlet-name>
+  	<url-pattern>/adminClasses</url-pattern>
+  </servlet-mapping>
+  
+  
+  
   
   
   <!-- 异常处理 begin -->
@@ -108,4 +124,14 @@
 		<taglib-location>/WEB-INF/c.tld</taglib-location>
 		</taglib>
     </jsp-config>
+    
+    <!-- test -->
+    <servlet>
+		<servlet-name>MultiServlet</servlet-name>
+		<servlet-class>com.my.test.MultiServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MultiServlet</servlet-name>
+		<url-pattern>/multiServlet</url-pattern>
+	</servlet-mapping>
 </web-app>

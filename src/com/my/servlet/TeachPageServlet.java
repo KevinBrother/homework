@@ -32,10 +32,10 @@ public class TeachPageServlet extends HttpServlet{
 	  /*resp. setCharacterEncoding("UTF-8"); */
 		resp.setHeader("content-type", "text/html;charset=GBK");
 		
-		req.setAttribute("teachersList", teacherService.teachPage());		
+		req.setAttribute("teachersList", teacherService.teachPage());	
+		/*resp.getWriter().print(teacherService.teachPage());*/
+		/*req.getRequestDispatcher("/test/teachPage.jsp").forward(req, resp);*/
+		req.getRequestDispatcher("/admin/teach/teachPage.jsp").forward(req, resp);
 		
-		req.getRequestDispatcher("/test/teachPage.jsp").forward(req, resp);
-/*		req.getRequestDispatcher("/admin/teach/teachPage.jsp").forward(req, resp);
-*/		
 	}
 }

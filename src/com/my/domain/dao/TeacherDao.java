@@ -6,12 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.my.domain.model.Teacher;
 import com.my.util.DBHelper;
+import com.my.util.ModelConvert;
 
 public class TeacherDao {
 	
@@ -51,7 +54,7 @@ public class TeacherDao {
 		}
 	}
 	
-/*	public List teachPage() {
+	public List<Map<String, Object>> jsonTeachPage() {
 		try {
 			//获取链接
 		    conn = DBHelper.getConnection();
@@ -69,7 +72,7 @@ public class TeacherDao {
 			e.printStackTrace();
 		}
 		return null;
-	}*/
+	}
 	
 	public ArrayList<Teacher> teachPage() {
 		ArrayList<Teacher> list = new ArrayList<Teacher>(); 

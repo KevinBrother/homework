@@ -1,6 +1,7 @@
 package com.my.domain.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.my.domain.dao.TeacherDao;
 import com.my.domain.model.Teacher;
@@ -17,8 +18,13 @@ public class TeacherService {
 		return teacherDao.teachPage();
 	}
 	
+	public List<Map<String, Object>> jsonTeachPage() {
+		return teacherDao.jsonTeachPage();
+	}
+	
 	public Teacher teachDetail(String teacherId) {
-		return teacherDao.teachDetail(teacherId);
+		Teacher teacher	= 	teacherDao.teachDetail(teacherId);
+				return teacher;
 	}
 
 	public void modifyTeach(Teacher teacher) {

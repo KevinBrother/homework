@@ -37,14 +37,13 @@
 					<th>所带班级编号</th>
 					<th>教授课程</th>
 				</tr>	
-				<c:forEach var="teachersList" items="${teachersList}">
+				<c:forEach var="teacher" items="${teachersList}" begin="1" end="3" step="1" >
 				<tr>
-					<c:out value="${name}"/><p>
-				<%-- 	<td><a href="${pageContext.request.contextPath}/teachDetail?id=${teacher.id}">${teacher.id}</a></td>
+					<td>${teacher.id}</td>
 					<td>${teacher.name}</td>
+					<td>${teacher.teachCourse}</td>
 					<td>${teacher.isTutor}</td>
 					<td>${teacher.leadClassId}</td>
-					<td>${teacher.teachCourse}</td> --%>
 				</tr>
 				</c:forEach>
 			</table>

@@ -9,6 +9,16 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/admin/welcome.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/core.js"></script>
+<script type="text/javascript">
+	$.ajax({
+		type: "post",
+		url: "${pageContext.request.contextPath}/adminClasses?method=teachPage",
+		dataType: "json",
+		success: function(data){
+			console.log(data)
+		}
+	})
+</script>
 </head>
 <body>
 <%-- 	${param.name}
@@ -24,13 +34,13 @@
 			<ul class="breadcrumb">
 				<li>班级管理</li>
 				<li>></li>
-				<li>新增列表</li>
+				<li>新增班级</li>
 			</ul>
 		</header>
 		<div class="body">
-			<form action="${pageContext.request.contextPath}/addTeach" method="post">
-				姓名： <input type="text" name="name" placeholder="教师姓名"/> <br/>
-				<!-- 教授课程： <input type="text" name="" placeholder="课程名称：英语  语文"/><br/> -->
+			<form action="${pageContext.request.contextPath}/adminClasses?method=add" method="post">
+				班级名称： <input type="text" name="name" placeholder="班级名称"/> <br/>
+				班主任编号： <input type="text" name="teacherId" placeholder="班主任编号"/> <br/>
 				<input type="submit" value="确定"/>
 			</form>
 		</div>
