@@ -38,14 +38,6 @@
 					<th>所带班级编号</th>
 					<th>教授课程</th>
 				</tr>	
-	 			   <%
-					   //循环显示数据
-					   List<Teacher> teacherslist = (List)request.getAttribute("teachersList"); // 取request里面的对象队列
-					    if(teacherslist.size() != 0){
-					      for(int i = 0; i < teacherslist.size(); i++){        
-					         pageContext.setAttribute("teacher", teacherslist.get(i)); 
-					           //保存到页面pageContext里面方便下面进行EL表达式调用
-				     %> 
 				<tr>
 					<td><a href="${pageContext.request.contextPath}/teachDetail?id=${teacher.id}">${teacher.id}</a></td>
 					<td>${teacher.name}</td>
@@ -53,13 +45,11 @@
 					<td>${teacher.leadClassId}</td>
 					<td>${teacher.teachCourse}</td>
 				</tr>
-				<%}} %>	
 			</table>
 		</div>
 	</section>	
 	<!-- 底部 -->
 	<footer>
 	</footer>
-	
 </body>
 </html>

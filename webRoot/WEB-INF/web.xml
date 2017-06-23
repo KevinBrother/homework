@@ -73,12 +73,12 @@
   
   <!--管理员登录班级模块 begin-->
   <servlet>
-  	<servlet-name>AdminClasses</servlet-name>
-  	<servlet-class>com.my.servlet.AdminClasses</servlet-class>	
+  	<servlet-name>AClassesServlet</servlet-name>
+  	<servlet-class>com.my.servlet.AClassesServlet</servlet-class>	
   </servlet>
   <servlet-mapping>
-  	<servlet-name>AdminClasses</servlet-name>
-  	<url-pattern>/adminClasses</url-pattern>
+  	<servlet-name>AClassesServlet</servlet-name>
+  	<url-pattern>/aClasses</url-pattern>
   </servlet-mapping>
   
   

@@ -12,7 +12,7 @@
 <script type="text/javascript">
 	$.ajax({
 		type: "post",
-		url: "${pageContext.request.contextPath}/adminClasses?method=teachPage",
+		url: "${pageContext.request.contextPath}/aClasses?method=teachPage",
 		dataType: "json",
 		success: function(data){
 			console.log(data)
@@ -38,7 +38,7 @@
 			</ul>
 		</header>
 		<div class="body">
-			<form action="${pageContext.request.contextPath}/adminClasses?method=add" method="post">
+			<form action="${pageContext.request.contextPath}/aClasses?method=add" method="post">
 				班级名称： <input type="text" name="name" placeholder="班级名称"/> <br/>
 				班主任编号： <input type="text" name="teacherId" placeholder="班主任编号"/> <br/>
 				<input type="submit" value="确定"/>

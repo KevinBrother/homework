@@ -20,13 +20,13 @@ public class AClassesDao {
 	PreparedStatement prepStmt = null;
 	ResultSet rs = null;
 	
-	public void add(Teacher teacher) {
+	public void add(String name, int teacherId) {
 		try {
 			//获取链接
 		    conn = DBHelper.getConnection();
-		    logger.info("===>>>>>====" + teacher);
-			String sql = "insert into teacher (name, password) values ("
-					+ "'" + teacher.getName() + "','qwer1234')";
+		    logger.info("===>>>>>====" + name, teacherId);
+			String sql = "insert into classes (name, teacherId) values ("
+					+ "'" + name + "','" + teacherId + "')";
 			//得到运行环境，并且执行sql
 			stmt = conn.createStatement();
 	        //获得结果
@@ -41,5 +41,7 @@ public class AClassesDao {
 			CloseAllDao.close(stmt, prepStmt, rs);
 		}
 	}
+	
+	
 	
 }

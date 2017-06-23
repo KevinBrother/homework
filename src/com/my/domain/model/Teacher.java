@@ -61,11 +61,11 @@ public class Teacher {
 		this.leadClassId = leadClassId;
 	}
 
-/*	@Override
+	@Override
 	public String toString() {
 		return "[id=" + id + ", name=" + name + ", password="
 				+ password + ", teachCourse=" + teachCourse + ", isTutor="
 				+ isTutor + ", leadClassId=" + leadClassId + "]";
-	}*/
+	}
 
 }

@@ -24,17 +24,38 @@ public class TempTest {
 		System.out.println(JSONObjectjson.toString());*/
 		
 		List<Teacher> list = new ArrayList<Teacher>();
+		
+		
+		
 		Teacher t = new Teacher();
 		t.setId(1);
 		t.setName("王");
 		t.setPassword("a123123");
+		System.out.println(t + "-----");
+		JSONObject jsont = JSONObject.fromObject(t);
+		System.out.println(jsont+ "+++++++");
+		
+		
+		
+		String abc = "{\"test\":\"这是一个json\",\"这是字符\":\"abd\",\"这是数字\":3,\"这是bool\":false,\"这是空\":null}";
+		Object aObj = JSON.parse(abc);
+		System.out.println(aObj);
+		
+	/*	JSONArray jsonabc = JSONArray.fromObject(abc);
+		System.out.println(jsonabc);*/
+		
+		
+		
+		
+		
+		
 	/*	list.add(t);
 		JSONObject jsont = JSONObject.fromObject(t);  
 		JSONArray jsonList = JSONArray.fromObject(list);  
         System.out.println(jsont);  
         System.out.println(jsonList);  */
 		/*JSONArray jsont = JSONArray.fromObject(new Object[] {"abc", t.toString()});*/
-		System.out.println(t);
+	
 		
 		
 	}
