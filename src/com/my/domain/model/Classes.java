@@ -30,5 +30,11 @@ public class Classes {
 	public void setTeacherId(int teacherId) {
 		this.teacherId = teacherId;
 	}
+/*
+	@Override
+	public String toString() {
+		return "Classes [id=" + id + ", name=" + name + ", teacherId="
+				+ teacherId + "]";
+	}*/
 	
 }

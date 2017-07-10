@@ -20,9 +20,9 @@
 	<section class="content">
 		<header class="content-header">
 			<ul class="breadcrumb">
-				<li>教师管理</li>
+				<li>班级管理</li>
 				<li>></li>
-				<li>教师列表</li>
+				<li>班级列表</li>
 			</ul>
 		</header>
 		<div class="body">
@@ -32,18 +32,14 @@
 			</div>
 			<table class="body-table">
 				<tr>
-					<th>教师编号</th>
-					<th>教师姓名</th>
-					<th>是否是班主任</th>
-					<th>所带班级编号</th>
-					<th>教授课程</th>
+					<th>班级编号</th>
+					<th>班级名称</th>
+					<th>班主任姓名</th>
 				</tr>	
 				<tr>
 					<td><a href="${pageContext.request.contextPath}/teachDetail?id=${teacher.id}">${teacher.id}</a></td>
 					<td>${teacher.name}</td>
 					<td>${teacher.isTutor}</td>
-					<td>${teacher.leadClassId}</td>
-					<td>${teacher.teachCourse}</td>
 				</tr>
 			</table>
 		</div>

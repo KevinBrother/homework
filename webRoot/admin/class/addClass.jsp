@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/admin/welcome.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/core.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/util.js"></script>
 <script type="text/javascript">
 	$.ajax({
 		type: "post",
@@ -16,6 +17,12 @@
 		dataType: "json",
 		success: function(data){
 			console.log(data)
+			for(var i = 0; curTeachPage = data.result.teachPage[i]; i++) {
+				$("#teacherId").append("<option value=" + curTeachPage.id + ">" + curTeachPage.name + "</option>")
+			}
+
+			if(param("id"))
+				$("#classId").val(param("id"))
 		}
 	})
 </script>
@@ -38,9 +45,11 @@
 			</ul>
 		</header>
 		<div class="body">
-			<form action="${pageContext.request.contextPath}/aClasses?method=add" method="post">
+			<form action="${pageContext.request.contextPath}/aClasses?method=makeClass" method="post">
 				班级名称： <input type="text" name="name" placeholder="班级名称"/> <br/>
-				班主任编号： <input type="text" name="teacherId" placeholder="班主任编号"/> <br/>
+					      <input type="hidden" name="id" id="classId" value="0"/>
+				班主任编号： <select style="width: 200px;" id="teacherId" name="teacherId"></select> <br/>
+				
 				<input type="submit" value="确定"/>
 			</form>
 		</div>
